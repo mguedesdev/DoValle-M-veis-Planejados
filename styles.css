@@ -1,0 +1,190 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.header {
+  /* position: fixed; */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 25px 0;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.background-overlay,
+.background-overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 105%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 2s ease-in-out;
+  z-index: 1;
+  animation: moveHorizontally 15s linear infinite;
+}
+
+.background-overlay {
+  z-index: 2; /* Camada inicial */
+  opacity: 1; /* Começa visível */
+}
+
+.background-overlay2 {
+  z-index: 1; /* Camada secundária */
+  opacity: 0; /* Começa invisível */
+}
+
+/* Movimento do background */
+@keyframes moveHorizontally {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+
+.background-overlay.hidden {
+  opacity: 0; /* Oculta a imagem atual */
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+}
+
+.hero .slogan {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero .cta {
+  display: inline-block;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero .cta:hover {
+  background: #555;
+}
+
+
+
+
+/* About */
+.about {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.about li {
+  margin: 10px 0;
+}
+
+/* Testimonials */
+.testimonials {
+  background: #f4f4f4;
+  padding: 50px 0;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.testimonial {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Contact */
+.contact {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact .cta {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
