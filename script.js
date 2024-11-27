@@ -22,7 +22,23 @@ const observer = new IntersectionObserver(entries => {
 animateSections.forEach(section => observer.observe(section));
 
 // Botão de WhatsApp
-document.getElementById('whatsapp-button').addEventListener('click', () => {
+document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+  e.preventDefault(); // Evita o comportamento padrão do formulário
+
+  const phone = '12991636611'; // Número de telefone com código de área
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+
+  // Cria a URL para o WhatsApp com os parâmetros
+  const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(
+    `Olá, meu nome é ${name}. ${message}`
+  )}`;
+
+  // Redireciona o usuário para o WhatsApp
+  window.open(whatsappURL, '_blank');
+});
+
+document.getElementsByClassName('cta-button')[0].addEventListener('click', () => {
   const phone = '12991636611'; // Número de telefone com código de área
   const message = encodeURIComponent('Olá, gostaria de solicitar um orçamento!');
   window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
@@ -63,3 +79,74 @@ setInterval(changeBackgroundImage, 7000);
 // Define a primeira imagem ao carregar
 overlay1.style.backgroundImage = `url(${images[0]})`;
 overlay2.style.backgroundImage = `url(${images[1]})`; // Prepara a segunda imagem
+
+
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 0) {
+    header.classList.add('blur'); // Adiciona a classe quando o scrollY > 0
+  } else {
+    header.classList.remove('blur'); // Remove a classe quando o scrollY é 0
+  }
+});
+
+
+
+const carouselImages = document.querySelector('.carousel-images');
+const indicators = document.querySelectorAll('.carousel-indicators span');
+const prevButton = document.querySelector('.carousel-btn.prev');
+const nextButton = document.querySelector('.carousel-btn.next');
+
+let currentIndexWorks = 0;
+const totalSlides = indicators.length;
+let autoSlideInterval;
+
+// Atualiza o carrossel para exibir o slide atual
+function updateCarousel() {
+  const offset = -currentIndexWorks * 100; // Move o carrossel para a imagem correspondente
+  carouselImages.style.transform = `translateX(${offset}%)`;
+
+  // Atualiza os indicadores
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle('active', index === currentIndexWorks);
+  });
+}
+
+// Avança para o próximo slide
+function nextSlide() {
+  currentIndexWorks = (currentIndexWorks + 1) % totalSlides; // Volta ao início ao chegar no final
+  updateCarousel();
+  resetAutoSlide(); // Reseta o intervalo de troca automática
+}
+
+// Volta para o slide anterior
+function prevSlide() {
+  currentIndexWorks = (currentIndexWorks - 1 + totalSlides) % totalSlides; // Vai para o final ao início
+  updateCarousel();
+  resetAutoSlide(); // Reseta o intervalo de troca automática
+}
+
+// Reseta o intervalo de troca automática
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval); // Interrompe o intervalo existente
+  autoSlideInterval = setInterval(nextSlide, 5000); // Reinicia o intervalo
+}
+
+// Adiciona eventos nos botões
+if (nextButton && prevButton) {
+  nextButton.addEventListener('click', nextSlide);
+  prevButton.addEventListener('click', prevSlide);
+}
+
+// Adiciona eventos nos indicadores
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    currentIndexWorks = index;
+    updateCarousel();
+    resetAutoSlide(); // Reseta o intervalo de troca automática
+  });
+});
+
+// Troca automática de slides a cada 5 segundos
+autoSlideInterval = setInterval(nextSlide, 5000);

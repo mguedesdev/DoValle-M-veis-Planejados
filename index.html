@@ -4,71 +4,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dovalle Móveis Planejados</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Cabeçalho -->
   <header class="header">
-    <nav class="navbar ">
+    <nav class="navbar">
       <a href="#hero" class="nav-link">Início</a>
       <a href="#about" class="nav-link">Sobre</a>
       <a href="#testimonials" class="nav-link">Depoimentos</a>
       <a href="#contact" class="nav-link">Contato</a>
     </nav>
   </header>
+  
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
+
     <div class="background-overlay"></div>
     <div class="background-overlay2"></div>
-    <div class="container">
+    <div class="overlay"></div>
+    <div class="container hero-content">
       <h1>Dovalle Móveis Planejados</h1>
       <p class="slogan">Nossa meta é sua satisfação</p>
-      <a href="tel:12991636611" class="cta">Solicite seu orçamento</a>
+      <button class="cta-button">Solicite um orçamento</button>
     </div>
   </section>
   
   
-  
-  
-
-  <!-- Sobre -->
   <section id="about" class="about">
     <div class="container">
       <h2>Por que escolher a Dovalle?</h2>
-      <ul>
-        <li><strong>Pontualidade garantida:</strong> Respeitamos os prazos.</li>
-        <li><strong>Qualidade superior:</strong> Materiais de alto padrão.</li>
-        <li><strong>Atendimento personalizado:</strong> Projetos que se adaptam ao seu estilo.</li>
-      </ul>
+      <div class="about-grid">
+        <div class="card">
+          <i class="fas fa-clock"></i>
+          <h3>Pontualidade garantida</h3>
+          <p>Respeitamos os prazos.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-star"></i>
+          <h3>Qualidade superior</h3>
+          <p>Materiais de alto padrão.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-handshake"></i>
+          <h3>Atendimento personalizado</h3>
+          <p>Projetos que se adaptam ao seu estilo.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-tools"></i>
+          <h3>Acabamento impecável</h3>
+          <p>Detalhes que fazem a diferença.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-people-carry"></i>
+          <h3>Equipe especializada</h3>
+          <p>Profissionais capacitados para atender suas expectativas.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-thumbs-up"></i>
+          <h3>Alta satisfação</h3>
+          <p>Clientes que sempre recomendam.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Depoimentos -->
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <h2>O que nossos clientes dizem</h2>
-      <div class="testimonial">
+  <section id="info" class="info-section">
+    <div class="container info-container">
+      <div class="info-image">
+        <img src="images/image8.jpg" alt="Exemplo de móveis planejados">
+      </div>
+      <div class="info-text">
+        <h2>Transforme seu espaço com móveis planejados</h2>
+        <p>
+          Com a Dovalle, cada detalhe do seu projeto é pensado para unir estética e funcionalidade. 
+        </p>
+        <p>
+          Criamos móveis que valorizam o seu espaço e refletem o seu estilo de vida, utilizando materiais de alta qualidade e acabamento impecável.
+        </p>
+        <p>
+          Entre em contato conosco e descubra como podemos transformar sua casa ou escritório em um ambiente dos sonhos.
+        </p>
+        <a href="#contact" class="cta">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+  
+  
+
+<!-- Depoimentos -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <i class="fas fa-user-circle"></i>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
         <p>"Ótimo atendimento! Meu balcão foi entregue no dia seguinte e ficou perfeito."</p>
         <span>- Cliente Satisfeito</span>
       </div>
-      <div class="testimonial">
+      <div class="testimonial-card">
+        <i class="fas fa-user-circle"></i>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
         <p>"Minha mesa de jantar ficou incrível! Recomendo muito a Dovalle."</p>
         <span>- Cliente Satisfeito</span>
       </div>
+      <div class="testimonial-card">
+        <i class="fas fa-user-circle"></i>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>"Equipe incrível, entregaram antes do prazo e com uma qualidade impecável!"</p>
+        <span>- Cliente Satisfeito</span>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contato -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Entre em contato</h2>
+
+<section id="works" class="works">
+  <div class="container container-works">
+    <div class="text-works">
+      <h2>Veja Nossos Trabalhos</h2>
+      <p>
+        Explore nossos projetos e veja como podemos transformar a sua casa ou escritório. 
+        Seja para cozinhas, salas, quartos ou ambientes corporativos, temos soluções personalizadas 
+        que valorizam o seu espaço e refletem o seu estilo de vida.
+      </p>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-images">
+          <img src="images/image6.jpg" alt="Projeto 1">
+          <img src="images/image9.jpg" alt="Projeto 2">
+          <img src="images/image7.jpg" alt="Projeto 3">
+          <img src="images/image10.jpg" alt="Projeto 4">
+          <img src="images/image11.jpg" alt="Projeto 5">
+        </div>
+        <!-- Botões de navegação -->
+        <button class="carousel-btn prev">&lt;</button>
+        <button class="carousel-btn next">&gt;</button>
+      </div>
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <span data-slide="0" class="active"></span>
+        <span data-slide="1"></span>
+        <span data-slide="2"></span>
+        <span data-slide="3"></span>
+        <span data-slide="4"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section id="contact" class="contact">
+  <div class="container-contact container">
+    <!-- Parte 1: Formulário de Contato -->
+    <div class="contact-form">
+      <h2>Solicite um orçamento</h2>
+      <form id="whatsapp-form">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" placeholder="Digite sua mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="cta">Enviar pelo WhatsApp</button>
+      </form>
+    </div>
+
+    <!-- Parte 2: Localização -->
+    <div class="contact-location">
+      <h2>Venha nos visitar</h2>
+      <p>Estamos prontos para atender você. Venha nos visitar e conhecer nossos projetos e serviços.</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.346582014999!2d-45.546102000000004!3d-22.990372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ccf92a3dc89f11%3A0x99f06487bf07af2f!2sDovalle%20M%C3%B3veis%20Planejados!5e0!3m2!1spt-BR!2sbr!4v1698260812641!5m2!1spt-BR!2sbr"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
       <p>📍 Rodolpho de Bona, 239 - Chácara Canaã, Taubaté - SP</p>
       <p>📞 <a href="tel:12991636611">(12) 99163-6611</a></p>
       <p>📅 Segunda a Sexta | 08:00–18:30</p>
-      <button id="whatsapp-button" class="cta">Fale conosco no WhatsApp</button>
+      
     </div>
-  </section>
+  </div>
+</section>
+
+  
 
   <footer class="footer">
     <div class="container">
