@@ -48,7 +48,7 @@ const overlay1 = document.querySelector('.background-overlay');
 const overlay2 = document.querySelector('.background-overlay2');
 
 const images = [
-  'images/image4.jpg',
+  'images/image8.jpg',
   'images/image5.jpg',
   'images/image1.jpg',
 ];
@@ -150,3 +150,23 @@ indicators.forEach((indicator, index) => {
 
 // Troca automática de slides a cada 5 segundos
 autoSlideInterval = setInterval(nextSlide, 5000);
+
+
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navLinks = document.querySelector('.nav-links');
+
+hamburgerMenu.addEventListener('click', () => {
+  hamburgerMenu.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+
+document.querySelectorAll('.nav-link, .logo a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault(); // Evita o comportamento padrão do clique
+    const target = document.querySelector(link.getAttribute('href')); // Encontra o elemento alvo
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' }); // Scroll suave
+    }
+  });
+});
